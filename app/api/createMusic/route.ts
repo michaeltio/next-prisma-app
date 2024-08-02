@@ -19,7 +19,6 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET() {
-  return NextResponse.json({
-    bro: "sis",
-  });
+  const music = await db.musicQueue.findMany();
+  return NextResponse.json(music);
 }
